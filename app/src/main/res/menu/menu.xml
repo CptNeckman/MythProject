@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Мифология">
+        <menu>
+            <item
+                android:id="@+id/menu_greece"
+                android:title="Древнегреческая"
+                android:icon="@drawable/ic_greece"/>
+            <item
+                android:id="@+id/menu_rome"
+                android:title="Римская"
+                android:icon="@drawable/ic_rome"/>
+            <item
+                android:id="@+id/menu_rus"
+                android:title="Славянская"
+                android:icon="@drawable/ic_rus"/>
+            <item
+                android:id="@+id/menu_japan"
+                android:title="Японская"
+                android:icon="@drawable/ic_japan"/>
+            <item
+                android:id="@+id/menu_china"
+                android:title="Китайская"
+                android:icon="@drawable/ic_china"/>
+            <item
+                android:id="@+id/menu_egypt"
+                android:title="Египетская"
+                android:icon="@drawable/ic_egypt"/>
+            <item
+                android:id="@+id/menu_maya"
+                android:title="Индейцы Майя"
+                android:icon="@drawable/ic_maya"/>
+        </menu>
+    </item>
+
+</menu>

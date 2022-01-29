@@ -1,13 +1,17 @@
 package com.example.mythproject.adapter
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mythproject.R
+import com.example.mythproject.model.MainActivity
+import com.example.mythproject.model.SecondActivity
 
-class MythAdapter(val name: Array<String>):
+class MythAdapter(val context: Context,val name: Array<String>, val category: String):
     RecyclerView.Adapter<MythAdapter.MyViewHolder>() {
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
@@ -23,11 +27,22 @@ class MythAdapter(val name: Array<String>):
 
     override fun onBindViewHolder(holder: MythAdapter.MyViewHolder, position: Int) {
         holder.mythName.text = name[position]
+        val namePosition = name[position]
+        val assets= context.assets
+            .open("$category/$namePosition")
+            .bufferedReader().use {
+                it.readText()
+            }
+
+        holder.mythName.setOnClickListener{
+            val intent = Intent(context,SecondActivity::class.java)
+            intent.putExtra("namePosition",namePosition)
+            intent.putExtra("assets",assets)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
        return name.size
     }
-
-
 }
