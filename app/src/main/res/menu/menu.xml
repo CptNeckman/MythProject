@@ -6,7 +6,7 @@
             <item
                 android:id="@+id/menu_greece"
                 android:title="Древнегреческая"
-                android:icon="@drawable/ic_greece"/>
+                android:icon="@drawable/ic_greece" />
             <item
                 android:id="@+id/menu_rome"
                 android:title="Римская"
@@ -31,6 +31,11 @@
                 android:id="@+id/menu_maya"
                 android:title="Индейцы Майя"
                 android:icon="@drawable/ic_maya"/>
+            <item
+                android:id="@+id/menu_skandinav"
+                android:title="Скандинавская"
+                android:icon="@drawable/ic_skandinav"/>
+
         </menu>
     </item>
 
