@@ -11,21 +11,21 @@ import com.example.mythproject.R
 import com.example.mythproject.model.MainActivity
 import com.example.mythproject.model.SecondActivity
 
-class MythAdapter(val context: Context,val name: Array<String>, val category: String):
+class MythAdapter(val context: Context, val name: List<String>, val category: String):
     RecyclerView.Adapter<MythAdapter.MyViewHolder>() {
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val mythName: TextView = itemView.findViewById(R.id.mythName)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MythAdapter.MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView =
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.recyclerview_item, parent, false)
         return MyViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: MythAdapter.MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.mythName.text = name[position]
         val namePosition = name[position]
         val assets= context.assets

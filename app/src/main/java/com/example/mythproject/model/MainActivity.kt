@@ -1,19 +1,23 @@
 package com.example.mythproject.model
 
-import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.res.AssetManager
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mythproject.R
+import com.example.mythproject.SettingsActivity
 import com.example.mythproject.adapter.MythAdapter
 import com.google.android.material.navigation.NavigationView
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,6 +26,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var recyclerView: RecyclerView
     private lateinit var navView: NavigationView
+    private lateinit var search: SearchView
+    private lateinit var titleName: String
+    private var listData = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +47,19 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         assetManager("greece")
 
+        search = findViewById(R.id.search)
+        search.setOnQueryTextListener(
+            object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    return false
+                }
+
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    filterSearch(newText?.toLowerCase(Locale.ROOT))
+                    return false
+                }
+            }
+        )
         navView = findViewById(R.id.nav_view)
         navView.itemIconTintList = null
         navView.setNavigationItemSelectedListener {
@@ -85,6 +105,11 @@ class MainActivity : AppCompatActivity() {
                     toolbar.title = "Скандинавия"
                     toolbar.setBackgroundResource(R.drawable.background_scandinav)
                 }
+                R.id.menu_settings -> {
+                    val intent = Intent(this,SettingsActivity::class.java)
+                    startActivity(intent)
+                    toolbar.title = "Настройки"
+                }
             }
             drawerLayout.closeDrawer(GravityCompat.START)
             true
@@ -95,7 +120,12 @@ class MainActivity : AppCompatActivity() {
     private fun assetManager(name: String){
         val assetManager: AssetManager = applicationContext.assets
         val assetList = assetManager.list(name) as Array<String>
-        recyclerView.adapter = MythAdapter(this, assetList, name)
+        listData.clear()
+        assetList.forEach {
+            listData.add(it)
+        }
+        titleName = name
+        recyclerView.adapter = MythAdapter(this, listData, name)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -106,6 +136,18 @@ class MainActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+
+    fun filterSearch(query: String?){
+        val filtredList = ArrayList<String>()
+        if (query != null) {
+            listData.filter { it.toLowerCase().contains(query) }.forEach {
+                filtredList.add(it)
+            }
+            recyclerView.adapter = MythAdapter(this, filtredList, titleName)
+        }
+
     }
 
 }

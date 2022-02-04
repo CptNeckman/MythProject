@@ -15,13 +15,17 @@
         <entry key="..\:/AndroidProjects/mythprodject/app/src/main/res/drawable/background_rome.xml" value="0.3651041666666667" />
         <entry key="..\:/AndroidProjects/mythprodject/app/src/main/res/drawable/background_rus.xml" value="0.3651041666666667" />
         <entry key="..\:/AndroidProjects/mythprodject/app/src/main/res/drawable/background_scandinav.xml" value="0.3651041666666667" />
+        <entry key="..\:/AndroidProjects/mythprodject/app/src/main/res/drawable/background_search.xml" value="0.20729166666666668" />
         <entry key="..\:/AndroidProjects/mythprodject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3594871794871795" />
+        <entry key="..\:/AndroidProjects/mythprodject/app/src/main/res/drawable/loadscreen.xml" value="0.3651041666666667" />
         <entry key="..\:/AndroidProjects/mythprodject/app/src/main/res/drawable/toolbar_background.xml" value="0.3594871794871795" />
         <entry key="..\:/AndroidProjects/mythprodject/app/src/main/res/font/font.xml" value="1.3107142857142857" />
         <entry key="..\:/AndroidProjects/mythprodject/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/mythprodject/app/src/main/res/layout/activity_second.xml" value="0.3489583333333333" />
+        <entry key="..\:/AndroidProjects/mythprodject/app/src/main/res/layout/activity_settings.xml" value="0.33" />
         <entry key="..\:/AndroidProjects/mythprodject/app/src/main/res/layout/nav_menu_header.xml" value="0.3489583333333333" />
         <entry key="..\:/AndroidProjects/mythprodject/app/src/main/res/layout/recyclerview_item.xml" value="0.3489583333333333" />
+        <entry key="..\:/AndroidProjects/mythprodject/app/src/main/res/layout/splash_screen.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/mythprodject/app/src/main/res/layout/toolbar.xml" value="0.3489583333333333" />
         <entry key="..\:/AndroidProjects/mythprodject/app/src/main/res/menu/menu.xml" value="0.3489583333333333" />
         <entry key="..\:/AndroidProjects/mythprodject/app/src/main/res/menu/menu_header.xml" value="0.3489583333333333" />

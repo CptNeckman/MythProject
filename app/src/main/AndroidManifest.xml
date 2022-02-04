@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".model.MainActivity"
+            android:name=".SplashActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +20,13 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".model.MainActivity"
+            android:exported="true"/>
+        <activity
             android:name=".model.SecondActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".SettingsActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 

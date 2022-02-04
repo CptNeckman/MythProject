@@ -19,6 +19,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/background_search"
+            app:iconifiedByDefault="false"
+            app:queryHint="Поиск по названию"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
